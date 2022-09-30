@@ -11,8 +11,11 @@
 
   <ItemGroup>
     <Compile Remove="Migrations-sqlserver\**" />
+    <Compile Remove="Repository\**" />
     <EmbeddedResource Remove="Migrations-sqlserver\**" />
+    <EmbeddedResource Remove="Repository\**" />
     <None Remove="Migrations-sqlserver\**" />
+    <None Remove="Repository\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Repository\" />
     <Folder Include="Tables\" />
   </ItemGroup>
 

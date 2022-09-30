@@ -11,7 +11,7 @@
         public string Address { get; set; }
         public string Siret { get; set; }
         public string Ape { get; set; }
-        public byte[] Photo { get; set; }
+        public string  Photo { get; set; }
 
     }
 }

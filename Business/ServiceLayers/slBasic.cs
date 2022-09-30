@@ -92,9 +92,9 @@ namespace Business.ServiceLayers
             return obj;
         }
         //web only
-        public doClient CreateNewCaseType(string tel, string address, string ape,
+        public doClient CreateClient(string tel, string address, string ape,
             string clientName, string fax, string mail,
-            string responsible, byte[] photo, string siret)
+            string responsible, string  photo, string siret)
         {
             var obj = new doClient { 
                 

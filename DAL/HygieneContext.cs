@@ -60,24 +60,26 @@ namespace DAL
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Hygiene;Trusted_Connection=true;");
+                //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Hygiene;Trusted_Connection=False;User Id=sa;Password=Allahakbar;MultipleActiveResultSets=true");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);//this is necessary for codde first
+
             modelBuilder.Entity<AccessGroup>(entity =>
             {
                 entity.ToTable("AccessGroup");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.AccessGroupName).HasMaxLength(55);
             });
 
             modelBuilder.Entity<AccessGroupForm>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.FormId });
+              //  entity.HasKey(e => new { e.Id, e.FormId });
 
                 entity.ToTable("AccessGroupForm");
             });
@@ -86,7 +88,7 @@ namespace DAL
             {
                 entity.ToTable("Activity");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.ActivityName).HasMaxLength(155);
             });
@@ -95,7 +97,7 @@ namespace DAL
             {
                 entity.ToTable("Cleaning");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.CleanEndDate).HasColumnType("date");
 
@@ -106,7 +108,7 @@ namespace DAL
             {
                 entity.ToTable("Client");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Address).HasMaxLength(155);
 
@@ -122,7 +124,7 @@ namespace DAL
 
                 entity.Property(e => e.Mail).HasMaxLength(55);
 
-                entity.Property(e => e.Photo).HasColumnType("image");
+               // entity.Property(e => e.Photo).HasColumnType("image");
 
                 entity.Property(e => e.Responsible)
                     .IsRequired()
@@ -137,7 +139,7 @@ namespace DAL
 
             modelBuilder.Entity<Form>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.FormName).HasMaxLength(55);
             });
@@ -146,7 +148,7 @@ namespace DAL
             {
                 entity.ToTable("Frequency");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+               // entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.FrequencyName).HasMaxLength(15);
 
@@ -155,7 +157,7 @@ namespace DAL
 
             modelBuilder.Entity<Operation>(entity =>
             {
-                entity.HasKey(e => new { e.SiteId, e.PlaceId, e.ActivityId });
+               // entity.HasKey(e => new { e.SiteId, e.PlaceId, e.ActivityId });
 
                 entity.ToTable("Operation");
 
@@ -168,7 +170,7 @@ namespace DAL
             {
                 entity.ToTable("Place");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+              //  entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.PlaceName)
                     .IsRequired()
@@ -177,8 +179,8 @@ namespace DAL
 
             modelBuilder.Entity<PlaceActivity>(entity =>
             {
-                entity.HasKey(e => new { e.ActivityId, e.PlaceId })
-                    .HasName("PK_SiteActivity");
+              //  entity.HasKey(e => new { e.ActivityId, e.PlaceId })
+                //    .HasName("PK_SiteActivity");
 
                 entity.ToTable("PlaceActivity");
             });
@@ -193,10 +195,10 @@ namespace DAL
 
                 entity.Property(e => e.Address).HasMaxLength(155);
 
-                entity.Property(e => e.ClientId)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength(true);
+                //entity.Property(e => e.ClientId)
+                //    .IsRequired()
+                //    .HasMaxLength(10)
+                //    .IsFixedLength(true);
 
                 entity.Property(e => e.Consultant).HasMaxLength(75);
 
@@ -236,15 +238,15 @@ namespace DAL
 
             modelBuilder.Entity<SitePlace>(entity =>
             {
-                entity.HasKey(e => new { e.SiteId, e.PlaceId })
-                    .HasName("PK_ClientPlace");
+                //entity.HasKey(e => new { e.SiteId, e.PlaceId })
+                //    .HasName("PK_ClientPlace");
 
                 entity.ToTable("SitePlace");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+              //  entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Pass).HasMaxLength(55);
 

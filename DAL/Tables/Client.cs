@@ -16,11 +16,11 @@ namespace DAL.Tables
         public string Address { get; set; }
         public string Siret { get; set; }
         public string Ape { get; set; }
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
 
         public override string ToString()
         {
-            return this.Id + "-" + this.ClientName + "-" + this.Responsible + "-" + this.Tel + "-" + this.Fax + "-" + this.Mail  +"-" + this.Address + "-" + this.Siret + "-" +  this.Ape + "-" + this.Photo.ToString();
+            return this.Id + "-" + this.ClientName + "-" + this.Responsible + "-" + this.Tel + "-" + this.Fax + "-" + this.Mail  +"-" + this.Address + "-" + this.Siret + "-" +  this.Ape + "-" + this.Photo;
         }
     }
 }
