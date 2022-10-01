@@ -63,7 +63,7 @@ namespace WebApi.Controllers
 
         //[HttpPost]
         [Route("api/queries/CreateClient")]
-        public ActionResult CreateCaseType(dtoClient data)
+        public ActionResult CreateClient(dtoClient data)
         {
             doClient obj = _sl.CreateClient(data.Tel, data.Address, data.Ape, data.ClientName, data.Fax, data.Mail, data.Responsible, data.Photo, data.Siret);
             try

@@ -15,6 +15,7 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ListClientsComponent } from "src/app/pages/MyComponents/list-client/list-clients.component";
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
+    ListClientsComponent
     // RtlComponent
   ]
 })

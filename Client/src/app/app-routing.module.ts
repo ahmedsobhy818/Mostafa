@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,8 @@ const routes: Routes = [
     redirectTo: "dashboard",
     pathMatch: "full"
   },
+
+
   {
     path: "",
     component: AdminLayoutComponent,
@@ -31,6 +34,11 @@ const routes: Routes = [
       }
     ]
   },
+  // {
+  //   path: 'ListClients',
+  //   component:ListClientsComponent,
+  //   pathMatch: "full"
+  // },
   {
     path: "**",
     redirectTo: "dashboard"
