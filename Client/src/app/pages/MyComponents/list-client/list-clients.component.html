@@ -1,3 +1,6 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
 <div class=" card">
   <div class=" card-header">
     <h4 class=" card-title">Simple Table</h4>
@@ -10,6 +13,7 @@
             <th>Name</th>
             <th>Responsible</th>
             <th>Address</th>
+            <th>Photo</th>
 
           </tr>
         </thead>
@@ -18,10 +22,17 @@
             <td>{{client.ClientName}}</td>
             <td>{{client.Responsible}}</td>
             <td>{{client.Address}}</td>
+            <td>
+              <img class="img" [src]="getPhoto(client)">
+            </td>
 
           </tr>
-          
+
         </tbody>
       </table>
     </div>
   </div>
+</div>
+</div>
+</div>
+

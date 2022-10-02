@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IClient } from 'src/app/Interfaces/client';
 import { BasicService } from 'src/app/Services/basic.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-list-clients',
@@ -11,7 +12,7 @@ export class ListClientsComponent implements OnInit {
 
   data:Array<IClient>
   constructor(private service:BasicService) {
- 
+
    }
 
   ngOnInit(): void {
@@ -21,5 +22,7 @@ export class ListClientsComponent implements OnInit {
 
     })
   }
-
+  getPhoto(client:IClient): string{
+    return /* environment.BaseUrl + */ "/Uploads/Images/Clients" + client.Photo;
+  }
 }
