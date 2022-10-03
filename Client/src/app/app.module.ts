@@ -13,6 +13,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
+import { AddClientComponent } from './pages/mycomponents/add-client/add-client.component';
 
 @NgModule({
   imports: [

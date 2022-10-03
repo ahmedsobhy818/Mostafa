@@ -23,6 +23,6 @@ export class ListClientsComponent implements OnInit {
     })
   }
   getPhoto(client:IClient): string{
-    return /* environment.BaseUrl + */ "/Uploads/Images/Clients" + client.Photo;
+    return /* environment.BaseUrl + */ "https://localhost:44382/Uploads/Images/Clients/" + client.Photo;
   }
 }

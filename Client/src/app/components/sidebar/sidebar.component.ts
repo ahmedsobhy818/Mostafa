@@ -21,6 +21,13 @@ export const ROUTES: RouteInfo[] = [
     rtlTitle: "كل العملاء",
     icon: "icon-single-02",
     class: ""
+  },
+  {
+    path: "/AddClient",
+    title: "New Client",
+    rtlTitle: "عميل جديد",
+    icon: "icon-single-02",
+    class: ""
   }
   // {
   //   path: "/icons",

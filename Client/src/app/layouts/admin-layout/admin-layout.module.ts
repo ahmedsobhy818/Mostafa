@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../pages/dashboard/dashboard.component";
@@ -16,6 +16,7 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ListClientsComponent } from "src/app/pages/MyComponents/list-client/list-clients.component";
+import { AddClientComponent } from "src/app/pages/mycomponents/add-client/add-client.component";
 
 @NgModule({
   imports: [
@@ -24,6 +25,8 @@ import { ListClientsComponent } from "src/app/pages/MyComponents/list-client/lis
     FormsModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -33,7 +36,8 @@ import { ListClientsComponent } from "src/app/pages/MyComponents/list-client/lis
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
-    ListClientsComponent
+    ListClientsComponent,
+    AddClientComponent
     // RtlComponent
   ]
 })
